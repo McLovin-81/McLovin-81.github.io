@@ -1,38 +1,31 @@
 <!DOCTYPE html>
+
 <html>
-<head>
-  <title>Online Poll</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <h1>Online Poll</h1>
 
-  <!-- Poll form -->
-  <form id="pollForm">
-    <h2>What is your favorite color?</h2>
-    <label>
-      <input type="radio" name="color" value="red"> Red
-    </label>
-    <label>
-      <input type="radio" name="color" value="blue"> Blue
-    </label>
-    <label>
-      <input type="radio" name="color" value="green"> Green
-    </label>
-    <label>
-      <input type="radio" name="color" value="yellow"> Yellow
-    </label>
+    <head>
+        <title>Online Poll</title>
+    </head>
 
-    <button type="submit">Submit</button>
-  </form>
+    <body>
+        <h1>Online Poll</h1>
+        
+        <form id="pollForm">
+            <p>Question: What is your favorite color?</p>
+            <label>
+                <input type="radio" name="color" value="red"> Red
+            </label>
+            <label>
+                <input type="radio" name="color" value="blue"> Blue
+            </label>
+            <label>
+                <input type="radio" name="color" value="green"> Green
+            </label>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
 
-  <!-- Container to display poll results -->
-  <div id="resultContainer">
-    <h2>Results:</h2>
-    <div id="resultText"></div>
-  </div>
+        <div id="result"></div>
 
-  <!-- JavaScript code -->
-  <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>

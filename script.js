@@ -1,16 +1,31 @@
-const pollForm = document.getElementById('pollForm');
-const resultContainer = document.getElementById('resultContainer');
-const resultText = document.getElementById('resultText');
+// Get references to the form and result elements
+const form = document.getElementById('pollForm');
+const result = document.getElementById('result');
 
-pollForm.addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form submission
+// Create an object to store the answer counts
+const answerCounts =
+{
+    red: 0,
+    blue: 0,
+    green: 0 
+};
 
-  const selectedColor = document.querySelector('input[name="color"]:checked');
-  
-  if (selectedColor) {
-    const color = selectedColor.value;
-    resultText.textContent = `Your favorite color is: ${color}`;
-    resultContainer.style.display = 'block';
-  }
+// Handle form submission
+form.addEventListener('submit', function(event)
+{
+    event.preventDefault(); // Prevent page reload.
+    
+    const selectedAnswer = document.querySelector('input[name="color"]:checked').value;
+
+    // Increment the count for the selected answer
+    answerCounts[selectedAnswer]++;
+
+    // Display the total answers and most selected answer
+    result.innerHTML = `
+    Total answers: ${Object.values(answerCounts).reduce((a, b) => a + b)}
+    <br>
+    Most selected answer: ${Object.keys(answerCounts).reduce((a, b) => answerCounts[a] > answerCounts[b] ? a : b)}`;
+
+    // Reset the form
+    form.reset();
 });
-
