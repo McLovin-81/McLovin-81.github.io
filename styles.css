@@ -1,0 +1,27 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  margin-top: 10px;
+}
+
+#resultContainer {
+  display: none;
+  margin-top: 20px;
+}
+
+#resultText {
+  font-weight: bold;
+}
+
